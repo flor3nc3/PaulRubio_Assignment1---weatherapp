@@ -1,4 +1,4 @@
-// Show weather data in the UI
+// weather data 
 export function displayWeather(data) {
   const weatherContainer = document.querySelector('#weatherDisplay');
   weatherContainer.innerHTML = `
@@ -9,14 +9,14 @@ export function displayWeather(data) {
   `;
 }
 
-// Show error message
+// error message
 export function showError(msg) {
   const weatherContainer = document.querySelector('#weatherDisplay');
   weatherContainer.innerHTML = `<p class="error">${msg}</p>`;
 }
 
-// Show favorite cities
-export function displayFavorites(favCities) {
+// fav cities
+export function displayFavourites(favCities) {
   const weatherContainer = document.querySelector('#weatherDisplay');
   if (favCities.length) {
     weatherContainer.innerHTML = '<h3>Your Favorite Cities:</h3>';
