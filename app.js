@@ -17,7 +17,7 @@ function getWeather() {
       addToFavorites(city); 
     })
     .catch(() => {
-      showError("Couldn't find the city, try again.");
+      showError("Couldn't find city, try again.");
     });
 }
 
