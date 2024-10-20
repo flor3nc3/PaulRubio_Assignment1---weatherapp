@@ -1,9 +1,9 @@
 import { fetchWeather } from './fetchWeather.js';
-import { displayWeather, showError, displayFavorites } from './ui.js';
+import { displayWeather, showError, displayFavourites } from './ui.js';
 
 let favCities = []; //  variable name
 
-// Get weather for the input city
+// Get weather for the suggest city
 function getWeather() {
   const city = document.querySelector('#cityInput').value.trim();
   if (!city) {
@@ -14,30 +14,30 @@ function getWeather() {
   fetchWeather(city)
     .then((data) => {
       displayWeather(data);
-      addToFavorites(city); 
+      addToFavourites(city); 
     })
     .catch(() => {
-      showError("Couldn't find city, try again.");
+      showError("Cant't find city, try again.");
     });
 }
 
-// Add city to favorites if not already there
-function addToFavorites(city) {
+// Add city to favourites if not already there
+function addToFavourites(city) {
   if (favCities.indexOf(city) === -1) {
     favCities.push(city);
-    console.log(`${city} added to favorites`);
+    console.log(`${city} added to favourites`);
   }
 }
 
-// Display favorite cities
-function showFavorites() {
+// favourite cities
+function showFavourites() {
   if (favCities.length) {
-    displayFavorites(favCities);
+    displayFavourites(favCities);
   } else {
-    console.log("No favorites yet.");
+    console.log("No favourites yet.");
   }
 }
 
 // Event listeners
 document.querySelector('#getWeatherBtn').addEventListener('click', getWeather);
-document.querySelector('#showFavoritesBtn').addEventListener('click', showFavorites);
+document.querySelector('#showFavouritesBtn').addEventListener('click', showFavourites);
